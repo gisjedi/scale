@@ -21,6 +21,7 @@ before_script:
 - nvm install 6
 install:
 - pip install -q -r scale/pip/build_linux.txt
+- pip install codecov
 script: ./travis-build.sh
 
 branches:

@@ -10,7 +10,9 @@ cd $root/scale-ui
 ./travis-build.sh
 
 cd $root/scale
-python manage.py test --noinput --parallel
-cd docs
+coverage run --source='.' manage.py test --parallel
+cd $root
+codecov
+cd $root/scale/docs
 make code_docs html
 ./push-docs.sh
